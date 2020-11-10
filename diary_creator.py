@@ -8,6 +8,7 @@ Marc (NessInMorse)
 """
 from time import time, localtime, asctime
 
+
 def makeFile(filename = "diary.txt"):
         """
         Makes a count.txt and diary.txt file
@@ -27,6 +28,7 @@ def makeFile(filename = "diary.txt"):
                 infile.write(f"> {asctime(localtime(time()))}"+"\n\n")
                 infile.close()
 
+
 def getPage():
         """
         Gets the information to be written in the diary
@@ -37,7 +39,8 @@ def getPage():
                      "diary today?\n")
         return p_text
 
-def getCount(filename="count.txt"):
+
+def getCount(filename = "count.txt"):
         """
         Gets the current count of all the words in the current diary
         in: (optional): filename
@@ -51,7 +54,8 @@ def getCount(filename="count.txt"):
         c = elements[3]
         return int(c)
 
-def writePage(w_text = "",filename = "diary.txt", c = 0):
+
+def writePage(w_text = "", filename = "diary.txt",  c = 0):
         """
         Writes the information given similarly to a diary
         in: a string to be added to the diary
@@ -75,7 +79,8 @@ def writePage(w_text = "",filename = "diary.txt", c = 0):
                      "\n\n")
         infile.close()
 
-def writeCount(word_count,writings):
+
+def writeCount(word_count, writings):
         """
         Writes the count of all the words in the coun.txt file
         in: amount of words already in the file,
@@ -87,8 +92,8 @@ def writeCount(word_count,writings):
         infile = open("count.txt","w")
         infile.write(f"Your diary has {c} words")
         infile.close()
-        
-                
+
+
 def findReadingSigns(r_word):
         """
         Searches whether a reading sign is in the word
@@ -102,8 +107,6 @@ def findReadingSigns(r_word):
                  ":" in r_word,
                  ";" in r_word)
         return any(items)
-
-        
 
 
 def main():
